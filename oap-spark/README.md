@@ -101,7 +101,7 @@ spark.yarn.numa.enabled true
 spark.yarn.numa.num [Your numa node number]
 spark.memory.pmem.mode [AppDirect | KMemDax]
 
-spark.files                       file://${PATH_TO_OAP_SPARK_JAR}/oap-spark-<version>-with-spark-<version>.jar,file://${{PATH_TO_OAP_COMMON_JAR}/oap-common-<version>-with-spark-<version>.jar
+spark.files                       file://${PATH_TO_OAP_SPARK_JAR}/oap-spark-<version>-with-spark-<version>.jar,file://${{PATH_TO_OAP_COMMON_JAR}}/oap-common-<version>-with-spark-<version>.jar
 spark.executor.extraClassPath     ./oap-spark-<version>-with-spark-<version>.jar:./oap-common-<version>-with-spark-<version>.jar
 spark.driver.extraClassPath       file://${PATH_TO_OAP_SPARK_JAR}/oap-spark-<version>-with-spark-<version>.jar:file://${{PATH_TO_OAP_COMMON_JAR}}/oap-common-<version>-with-spark-<version>.jar
 ```
