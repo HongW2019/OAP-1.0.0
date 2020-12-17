@@ -15,8 +15,8 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://hongw2019.github.io/OAP-1.0.0/2020/12/17/User-Guide/image/spark_shell_oap.png">
 <meta property="og:image" content="https://hongw2019.github.io/OAP-1.0.0/2020/12/17/User-Guide/image/webUI.png">
-<meta property="article:published_time" content="2020-12-17T14:22:44.016Z">
-<meta property="article:modified_time" content="2020-12-17T14:22:44.016Z">
+<meta property="article:published_time" content="2020-12-17T14:29:09.052Z">
+<meta property="article:modified_time" content="2020-12-17T14:29:09.052Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://hongw2019.github.io/OAP-1.0.0/2020/12/17/User-Guide/image/spark_shell_oap.png">
   
@@ -78,7 +78,7 @@
         <section id="main"><article id="post-User-Guide" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/OAP-1.0.0/2020/12/17/User-Guide/" class="article-date">
-  <time class="dt-published" datetime="2020-12-17T14:22:44.016Z" itemprop="datePublished">2020-12-17</time>
+  <time class="dt-published" datetime="2020-12-17T14:29:09.052Z" itemprop="datePublished">2020-12-17</time>
 </a>
     
   </div>
@@ -175,7 +175,12 @@
 <li><p>Besides, when enabling SQL Data Source Cache with external cache using Plasma, PMem could get noticeable performance gain with BIOS configuration settings below, especially on cross socket write path.</p>
 </li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">Socket Configuration -&gt; Memory Configuration -&gt; NGN Configuration -&gt; Snoopy mode <span class="keyword">for</span> AD : Enabled</span><br><span class="line">Socket Configuration -&gt; Intel UPI General Configuration -&gt; Stale AtoS :  Disabled</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">- It<span class="string">&#x27;s strongly advised to use [Linux device mapper](https://pmem.io/2018/05/15/using_persistent_memory_devices_with_the_linux_device_mapper.html) to interleave PMem across sockets and get maximum size for Plasma.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">   ``` bash</span></span><br><span class="line"><span class="string">   // use ipmctl command to show topology and dimm info of PMem</span></span><br><span class="line"><span class="string">   ipmctl show -topology</span></span><br><span class="line"><span class="string">   ipmctl show -dimm</span></span><br><span class="line"><span class="string">   // provision PMem in app direct mode</span></span><br><span class="line"><span class="string">   ipmctl create -goal PersistentMemoryType=AppDirect</span></span><br><span class="line"><span class="string">   // reboot system to make configuration take affect</span></span><br><span class="line"><span class="string">   reboot</span></span><br><span class="line"><span class="string">   // check capacity provisioned for app direct mode(AppDirectCapacity)</span></span><br><span class="line"><span class="string">   ipmctl show -memoryresources</span></span><br><span class="line"><span class="string">   // show the PMem region information</span></span><br><span class="line"><span class="string">   ipmctl show -region</span></span><br><span class="line"><span class="string">   // create namespace based on the region, multi namespaces can be created on a single region</span></span><br><span class="line"><span class="string">   ndctl create-namespace -m fsdax -r region0</span></span><br><span class="line"><span class="string">   ndctl create-namespace -m fsdax -r region1</span></span><br><span class="line"><span class="string">   // show the created namespaces</span></span><br><span class="line"><span class="string">   fdisk -l</span></span><br><span class="line"><span class="string">   // create and mount file system</span></span><br><span class="line"><span class="string">   sudo dmsetup create striped-pmem</span></span><br><span class="line"><span class="string">   mkfs.ext4 -b 4096 -E stride=512 -F /dev/mapper/striped-pmem</span></span><br><span class="line"><span class="string">   mkdir -p /mnt/pmem</span></span><br><span class="line"><span class="string">   mount -o dax /dev/mapper/striped-pmem /mnt/pmem</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Socket Configuration -&gt; Memory Configuration -&gt; NGN Configuration -&gt; Snoopy mode <span class="keyword">for</span> AD : Enabled</span><br><span class="line">Socket Configuration -&gt; Intel UPI General Configuration -&gt; Stale AtoS :  Disabled</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>It’s strongly advised to use <a target="_blank" rel="noopener" href="https://pmem.io/2018/05/15/using_persistent_memory_devices_with_the_linux_device_mapper.html">Linux device mapper</a> to interleave PMem across sockets and get maximum size for Plasma.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">// use ipmctl <span class="built_in">command</span> to show topology and dimm info of PMem</span><br><span class="line">ipmctl show -topology</span><br><span class="line">ipmctl show -dimm</span><br><span class="line">// provision PMem <span class="keyword">in</span> app direct mode</span><br><span class="line">ipmctl create -goal PersistentMemoryType=AppDirect</span><br><span class="line">// reboot system to make configuration take affect</span><br><span class="line">reboot</span><br><span class="line">// check capacity provisioned <span class="keyword">for</span> app direct mode(AppDirectCapacity)</span><br><span class="line">ipmctl show -memoryresources</span><br><span class="line">// show the PMem region information</span><br><span class="line">ipmctl show -region</span><br><span class="line">// create namespace based on the region, multi namespaces can be created on a single region</span><br><span class="line">ndctl create-namespace -m fsdax -r region0</span><br><span class="line">ndctl create-namespace -m fsdax -r region1</span><br><span class="line">// show the created namespaces</span><br><span class="line">fdisk -l</span><br><span class="line">// create and mount file system</span><br><span class="line">sudo dmsetup create striped-pmem</span><br><span class="line">mkfs.ext4 -b 4096 -E stride=512 -F /dev/mapper/striped-pmem</span><br><span class="line">mkdir -p /mnt/pmem</span><br><span class="line">mount -o dax /dev/mapper/striped-pmem /mnt/pmem</span><br></pre></td></tr></table></figure>
 
 <p>   For more information you can refer to <a target="_blank" rel="noopener" href="https://software.intel.com/content/www/us/en/develop/articles/quick-start-guide-configure-intel-optane-dc-persistent-memory-on-linux.html">Quick Start Guide: Provision Intel® Optane™ DC Persistent Memory</a></p>
 <ul>
@@ -292,7 +297,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://hongw2019.github.io/OAP-1.0.0/2020/12/17/User-Guide/" data-id="ckisxqi1500001ipvh4ed0la7" data-title="" class="article-share-link">Share</a>
+      <a data-url="https://hongw2019.github.io/OAP-1.0.0/2020/12/17/User-Guide/" data-id="ckisy2kky0002nfpvddt2fw50" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -300,6 +305,20 @@
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/OAP-1.0.0/2020/12/17/Advanced-Configuration/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
   
 </article>
 
@@ -331,6 +350,14 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/OAP-1.0.0/2020/12/17/Developer-Guide/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/OAP-1.0.0/2020/12/17/Advanced-Configuration/">(no title)</a>
+          </li>
         
           <li>
             <a href="/OAP-1.0.0/2020/12/17/User-Guide/">(no title)</a>
