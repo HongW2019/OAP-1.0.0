@@ -4,8 +4,8 @@ SQL Index and Data Source Cache is an optimized plug-in package designed to acce
 
 Please refer to these documents for more information:
 
-* [Architecture Overview](./architect-overview.md)
-* [User Guide](./user-guide.md)
-* [Developer Guide](./developer-guide.md)
+* [Architecture Overview](./Architect-Overview.md)
+* [User Guide](./User-Guide.md)
+* [Developer Guide](./Developer-Guide.md)
 
 ###### \*Other names and brands may be claimed as the property of others.
