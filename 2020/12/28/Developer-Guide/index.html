@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>OAP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Developer GuideThis document is a supplement to the whole Developer Guide for SQL Index and Data Source Cache.After following that document, you can continue more details for SQL Index and Data Source">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OAP">
+<meta property="og:url" content="https://hongw2019.github.io/OAP-1.0.0/2020/12/28/Developer-Guide/index.html">
+<meta property="og:site_name" content="OAP">
+<meta property="og:description" content="Developer GuideThis document is a supplement to the whole Developer Guide for SQL Index and Data Source Cache.After following that document, you can continue more details for SQL Index and Data Source">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-12-28T15:12:21.441Z">
+<meta property="article:modified_time" content="2020-12-28T15:12:21.441Z">
+<meta property="article:author" content="Wh">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/OAP-1.0.0/atom.xml" title="OAP" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/OAP-1.0.0/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/OAP-1.0.0/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/OAP-1.0.0/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/OAP-1.0.0/" id="logo">OAP</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/OAP-1.0.0/">Home</a>
+        
+          <a class="main-nav-link" href="/OAP-1.0.0/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/OAP-1.0.0/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://hongw2019.github.io/OAP-1.0.0"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Developer-Guide" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/OAP-1.0.0/2020/12/28/Developer-Guide/" class="article-date">
+  <time class="dt-published" datetime="2020-12-28T15:12:21.441Z" itemprop="datePublished">2020-12-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Developer-Guide"><a href="#Developer-Guide" class="headerlink" title="Developer Guide"></a>Developer Guide</h1><p>This document is a supplement to the whole <a href="../../../docs/Developer-Guide.md">Developer Guide</a> for SQL Index and Data Source Cache.<br>After following that document, you can continue more details for SQL Index and Data Source Cache.</p>
+<ul>
+<li><a href="#building">Building</a></li>
+<li><a href="#enabling-numa-binding-for-pmem-in-spark">Enabling NUMA binding for Intel® Optane™ DC Persistent Memory in Spark</a></li>
+</ul>
+<h2 id="Building"><a href="#Building" class="headerlink" title="Building"></a>Building</h2><h3 id="Building-SQL-Index-and-Data-Source-Cache"><a href="#Building-SQL-Index-and-Data-Source-Cache" class="headerlink" title="Building SQL Index and  Data Source Cache"></a>Building SQL Index and  Data Source Cache</h3><p>Building with <a target="_blank" rel="noopener" href="http://maven.apache.org/">Apache Maven*</a>.</p>
+<p>Clone the OAP project:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone -b &lt;tag-version&gt;  https:&#x2F;&#x2F;github.com&#x2F;Intel-bigdata&#x2F;OAP.git</span><br><span class="line">cd OAP</span><br></pre></td></tr></table></figure>
+<p>Build the <code>oap-cache</code> package:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean -pl com.intel.oap:oap-cache -am package</span><br></pre></td></tr></table></figure>
+<h3 id="Running-Tests"><a href="#Running-Tests" class="headerlink" title="Running Tests"></a>Running Tests</h3><p>Run all the tests:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean -pl com.intel.oap:oap-cache -am test</span><br></pre></td></tr></table></figure>
+<p>Run a specific test suite, for example <code>OapDDLSuite</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn -pl com.intel.oap:oap-cache -am -DwildcardSuites&#x3D;org.apache.spark.sql.execution.datasources.oap.OapDDLSuite test</span><br></pre></td></tr></table></figure>
+<p><strong>NOTE</strong>: Log level of unit tests currently default to ERROR, please override oap-cache/oap/src/test/resources/log4j.properties if needed.</p>
+<h3 id="Building-with-Intel®-Optane™-DC-Persistent-Memory-Module"><a href="#Building-with-Intel®-Optane™-DC-Persistent-Memory-Module" class="headerlink" title="Building with Intel® Optane™ DC Persistent Memory Module"></a>Building with Intel® Optane™ DC Persistent Memory Module</h3><h4 id="Prerequisites-for-building-with-PMem-support"><a href="#Prerequisites-for-building-with-PMem-support" class="headerlink" title="Prerequisites for building with PMem support"></a>Prerequisites for building with PMem support</h4><p>Install the required packages on the build system:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://help.directadmin.com/item.php?id=494">cmake</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/memkind/memkind/tree/v1.10.1">memkind</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/pmem/vmemcache">vmemcache</a></li>
+<li><a target="_blank" rel="noopener" href="http://arrow.apache.org/blog/2017/08/08/plasma-in-memory-object-store/">Plasma</a></li>
+</ul>
+<h4 id="memkind-installation"><a href="#memkind-installation" class="headerlink" title="memkind installation"></a>memkind installation</h4><p>The memkind library depends on <code>libnuma</code> at the runtime, so it must already exist in the worker node system. Build the latest memkind lib from source:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git clone -b v1.10.1 https:&#x2F;&#x2F;github.com&#x2F;memkind&#x2F;memkind</span><br><span class="line">cd memkind</span><br><span class="line">.&#x2F;autogen.sh</span><br><span class="line">.&#x2F;configure</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<h4 id="vmemcache-installation"><a href="#vmemcache-installation" class="headerlink" title="vmemcache installation"></a>vmemcache installation</h4><p>To build vmemcache library from source, you can (for RPM-based linux as example):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;pmem&#x2F;vmemcache</span><br><span class="line">cd vmemcache</span><br><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">cmake .. -DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr -DCPACK_GENERATOR&#x3D;rpm</span><br><span class="line">make package</span><br><span class="line">sudo rpm -i libvmemcache*.rpm</span><br></pre></td></tr></table></figure>
+<h4 id="Plasma-installation"><a href="#Plasma-installation" class="headerlink" title="Plasma installation"></a>Plasma installation</h4><p>To use optimized Plasma cache with OAP, you need following components:  </p>
+<p>   (1) <code>libarrow.so</code>, <code>libplasma.so</code>, <code>libplasma_java.so</code>: dynamic libraries, will be used in Plasma client.<br>   (2) <code>plasma-store-server</code>: executable file, Plasma cache service.<br>   (3) <code>arrow-plasma-0.17.0.jar</code>: will be used when compile oap and spark runtime also need it. </p>
+<ul>
+<li><code>.so</code> file and binary file<br>Clone code from Intel-arrow repo and run following commands, this will install <code>libplasma.so</code>, <code>libarrow.so</code>, <code>libplasma_java.so</code> and <code>plasma-store-server</code> to your system path(<code>/usr/lib64</code> by default). And if you are using Spark in a cluster environment, you can copy these files to all nodes in your cluster if the OS or distribution are same, otherwise, you need compile it on each node.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;tmp</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;Intel-bigdata&#x2F;arrow.git</span><br><span class="line">cd arrow &amp;&amp; git checkout branch-0.17.0-oap-1.0</span><br><span class="line">cd cpp</span><br><span class="line">mkdir release</span><br><span class="line">cd release</span><br><span class="line">#build libarrow, libplasma, libplasma_java</span><br><span class="line">cmake -DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F; -DCMAKE_BUILD_TYPE&#x3D;Release -DARROW_BUILD_TESTS&#x3D;on -DARROW_PLASMA_JAVA_CLIENT&#x3D;on -DARROW_PLASMA&#x3D;on -DARROW_DEPENDENCY_SOURCE&#x3D;BUNDLED  ..</span><br><span class="line">make -j$(nproc)</span><br><span class="line">sudo make install -j$(nproc)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>arrow-plasma-0.17.0.jar<br> <code>arrow-plasma-0.17.0.jar</code> is provided in Maven central repo, you can download <a target="_blank" rel="noopener" href="https://repo1.maven.org/maven2/com/intel/arrow/arrow-plasma/0.17.0/arrow-plasma-0.17.0.jar">it</a> and copy to <code>$SPARK_HOME/jars</code> dir.</p>
+<p> Or you can manually install it, run following command, this will install arrow jars to your local maven repo. Besides, you need copy arrow-plasma-0.17.0.jar to <code>$SPARK_HOME/jars/</code> dir, cause this jar is needed when using external cache.</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;tmp&#x2F;arrow&#x2F;java</span><br><span class="line">mvn clean -q -pl plasma -DskipTests install</span><br></pre></td></tr></table></figure>
+
+<h4 id="Building-the-package"><a href="#Building-the-package" class="headerlink" title="Building the package"></a>Building the package</h4><p>You need to add <code>-Ppersistent-memory</code> to build with PMem support. For <code>noevict</code> cache strategy, you also need to build with <code>-Ppersistent-memory</code> parameter.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean -q -pl com.intel.oap:oap-cache -am  -Ppersistent-memory -DskipTests package</span><br></pre></td></tr></table></figure>
+<p>For vmemcache cache strategy, please build with command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean -q -pl com.intel.oap:oap-cache -am -Pvmemcache -DskipTests package</span><br></pre></td></tr></table></figure>
+<p>Build with this command to use all of them:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean -q -pl com.intel.oap:oap-cache -am  -Ppersistent-memory -Pvmemcache -DskipTests package</span><br></pre></td></tr></table></figure>
+<h2 id="Enabling-NUMA-binding-for-PMem-in-Spark"><a href="#Enabling-NUMA-binding-for-PMem-in-Spark" class="headerlink" title="Enabling NUMA binding for PMem in Spark"></a>Enabling NUMA binding for PMem in Spark</h2><h3 id="Rebuilding-Spark-packages-with-NUMA-binding-patch"><a href="#Rebuilding-Spark-packages-with-NUMA-binding-patch" class="headerlink" title="Rebuilding Spark packages with NUMA binding patch"></a>Rebuilding Spark packages with NUMA binding patch</h3><p>When using PMem as a cache medium apply the <a target="_blank" rel="noopener" href="https://www.kernel.org/doc/html/v4.18/vm/numa.html">NUMA</a> binding patch <a href="./numa-binding-spark-3.0.0.patch">numa-binding-spark-3.0.0.patch</a> to Spark source code for best performance.</p>
+<ol>
+<li><p>Download src for <a target="_blank" rel="noopener" href="https://archive.apache.org/dist/spark/spark-3.0.0/spark-3.0.0.tgz">Spark-3.0.0</a> and clone the src from github.</p>
+</li>
+<li><p>Apply this patch and <a target="_blank" rel="noopener" href="https://spark.apache.org/docs/latest/building-spark.html">rebuild</a> the Spark package.</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git apply  numa-binding-spark-3.0.0.patch</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>Add these configuration items to the Spark configuration file $SPARK_HOME/conf/spark-defaults.conf to enable NUMA binding.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spark.yarn.numa.enabled true </span><br></pre></td></tr></table></figure>
+<p><strong>NOTE</strong>: If you are using a customized Spark, you will need to manually resolve the conflicts.</p>
+<h6 id="Other-names-and-brands-may-be-claimed-as-the-property-of-others"><a href="#Other-names-and-brands-may-be-claimed-as-the-property-of-others" class="headerlink" title="*Other names and brands may be claimed as the property of others."></a>*Other names and brands may be claimed as the property of others.</h6>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hongw2019.github.io/OAP-1.0.0/2020/12/28/Developer-Guide/" data-id="ckj8paogh0001orpv2zk93gns" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/OAP-1.0.0/2020/12/28/README/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/OAP-1.0.0/2020/12/28/index/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/OAP-1.0.0/archives/2020/12/">December 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/OAP-1.0.0/2020/12/28/User-Guide/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/OAP-1.0.0/2020/12/28/README/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/OAP-1.0.0/2020/12/28/Developer-Guide/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/OAP-1.0.0/2020/12/28/index/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/OAP-1.0.0/2020/12/28/Architect-Overview/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2020 Wh<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/OAP-1.0.0/" class="mobile-nav-link">Home</a>
+  
+    <a href="/OAP-1.0.0/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/OAP-1.0.0/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/OAP-1.0.0/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/OAP-1.0.0/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

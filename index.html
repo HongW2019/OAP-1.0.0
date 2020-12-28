@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>Hexo</title>
+  <title>OAP</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="OAP">
 <meta property="og:url" content="https://hongw2019.github.io/OAP-1.0.0/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="OAP">
 <meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="Wh">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/OAP-1.0.0/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/OAP-1.0.0/atom.xml" title="OAP" type="application/atom+xml">
   
   
     <link rel="shortcut icon" href="/OAP-1.0.0/favicon.png">
@@ -42,7 +42,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/OAP-1.0.0/" id="logo">Hexo</a>
+        <a href="/OAP-1.0.0/" id="logo">OAP</a>
       </h1>
       
     </div>
@@ -74,7 +74,7 @@
     <article id="post-User-Guide" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/OAP-1.0.0/2020/12/28/User-Guide/" class="article-date">
-  <time class="dt-published" datetime="2020-12-28T15:03:13.162Z" itemprop="datePublished">2020-12-28</time>
+  <time class="dt-published" datetime="2020-12-28T15:12:23.148Z" itemprop="datePublished">2020-12-28</time>
 </a>
     
   </div>
@@ -270,7 +270,414 @@ Run command  <code>yarn app -launch plasma-store-service /tmp/plasmaLaunch.json<
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://hongw2019.github.io/OAP-1.0.0/2020/12/28/User-Guide/" data-id="ckj8p1bvo00009npv8kzdc6uj" data-title="" class="article-share-link">Share</a>
+      <a data-url="https://hongw2019.github.io/OAP-1.0.0/2020/12/28/User-Guide/" data-id="ckj8paogk0005orpvbkip7d7g" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-README" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/OAP-1.0.0/2020/12/28/README/" class="article-date">
+  <time class="dt-published" datetime="2020-12-28T15:12:21.442Z" itemprop="datePublished">2020-12-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="SQL-Index-and-Data-Source-Cache"><a href="#SQL-Index-and-Data-Source-Cache" class="headerlink" title="SQL Index and Data Source Cache"></a>SQL Index and Data Source Cache</h1><p>SQL Index and Data Source Cache is an optimized plug-in package designed to accelerate Spark SQL* performance by using index and cache technology at the Spark* SQL data source layer. Indexing can improve Spark interactive query performance by as much as an order of magnitude, and caching delivers additional Spark* SQL query performance benefits. We support both DRAM and Intel® Optane™ Persistent Memory as cache media.</p>
+<p>Please refer to these documents for more information:</p>
+<ul>
+<li><a href="./Architect-Overview.md">Architecture Overview</a></li>
+<li><a href="./User-Guide.md">User Guide</a></li>
+<li><a href="./Developer-Guide.md">Developer Guide</a></li>
+</ul>
+<h6 id="Other-names-and-brands-may-be-claimed-as-the-property-of-others"><a href="#Other-names-and-brands-may-be-claimed-as-the-property-of-others" class="headerlink" title="*Other names and brands may be claimed as the property of others."></a>*Other names and brands may be claimed as the property of others.</h6>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hongw2019.github.io/OAP-1.0.0/2020/12/28/README/" data-id="ckj8paogi0002orpv098sdc63" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Developer-Guide" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/OAP-1.0.0/2020/12/28/Developer-Guide/" class="article-date">
+  <time class="dt-published" datetime="2020-12-28T15:12:21.441Z" itemprop="datePublished">2020-12-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Developer-Guide"><a href="#Developer-Guide" class="headerlink" title="Developer Guide"></a>Developer Guide</h1><p>This document is a supplement to the whole <a href="../../../docs/Developer-Guide.md">Developer Guide</a> for SQL Index and Data Source Cache.<br>After following that document, you can continue more details for SQL Index and Data Source Cache.</p>
+<ul>
+<li><a href="#building">Building</a></li>
+<li><a href="#enabling-numa-binding-for-pmem-in-spark">Enabling NUMA binding for Intel® Optane™ DC Persistent Memory in Spark</a></li>
+</ul>
+<h2 id="Building"><a href="#Building" class="headerlink" title="Building"></a>Building</h2><h3 id="Building-SQL-Index-and-Data-Source-Cache"><a href="#Building-SQL-Index-and-Data-Source-Cache" class="headerlink" title="Building SQL Index and  Data Source Cache"></a>Building SQL Index and  Data Source Cache</h3><p>Building with <a target="_blank" rel="noopener" href="http://maven.apache.org/">Apache Maven*</a>.</p>
+<p>Clone the OAP project:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone -b &lt;tag-version&gt;  https:&#x2F;&#x2F;github.com&#x2F;Intel-bigdata&#x2F;OAP.git</span><br><span class="line">cd OAP</span><br></pre></td></tr></table></figure>
+<p>Build the <code>oap-cache</code> package:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean -pl com.intel.oap:oap-cache -am package</span><br></pre></td></tr></table></figure>
+<h3 id="Running-Tests"><a href="#Running-Tests" class="headerlink" title="Running Tests"></a>Running Tests</h3><p>Run all the tests:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean -pl com.intel.oap:oap-cache -am test</span><br></pre></td></tr></table></figure>
+<p>Run a specific test suite, for example <code>OapDDLSuite</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn -pl com.intel.oap:oap-cache -am -DwildcardSuites&#x3D;org.apache.spark.sql.execution.datasources.oap.OapDDLSuite test</span><br></pre></td></tr></table></figure>
+<p><strong>NOTE</strong>: Log level of unit tests currently default to ERROR, please override oap-cache/oap/src/test/resources/log4j.properties if needed.</p>
+<h3 id="Building-with-Intel®-Optane™-DC-Persistent-Memory-Module"><a href="#Building-with-Intel®-Optane™-DC-Persistent-Memory-Module" class="headerlink" title="Building with Intel® Optane™ DC Persistent Memory Module"></a>Building with Intel® Optane™ DC Persistent Memory Module</h3><h4 id="Prerequisites-for-building-with-PMem-support"><a href="#Prerequisites-for-building-with-PMem-support" class="headerlink" title="Prerequisites for building with PMem support"></a>Prerequisites for building with PMem support</h4><p>Install the required packages on the build system:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://help.directadmin.com/item.php?id=494">cmake</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/memkind/memkind/tree/v1.10.1">memkind</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/pmem/vmemcache">vmemcache</a></li>
+<li><a target="_blank" rel="noopener" href="http://arrow.apache.org/blog/2017/08/08/plasma-in-memory-object-store/">Plasma</a></li>
+</ul>
+<h4 id="memkind-installation"><a href="#memkind-installation" class="headerlink" title="memkind installation"></a>memkind installation</h4><p>The memkind library depends on <code>libnuma</code> at the runtime, so it must already exist in the worker node system. Build the latest memkind lib from source:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git clone -b v1.10.1 https:&#x2F;&#x2F;github.com&#x2F;memkind&#x2F;memkind</span><br><span class="line">cd memkind</span><br><span class="line">.&#x2F;autogen.sh</span><br><span class="line">.&#x2F;configure</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<h4 id="vmemcache-installation"><a href="#vmemcache-installation" class="headerlink" title="vmemcache installation"></a>vmemcache installation</h4><p>To build vmemcache library from source, you can (for RPM-based linux as example):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;pmem&#x2F;vmemcache</span><br><span class="line">cd vmemcache</span><br><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">cmake .. -DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr -DCPACK_GENERATOR&#x3D;rpm</span><br><span class="line">make package</span><br><span class="line">sudo rpm -i libvmemcache*.rpm</span><br></pre></td></tr></table></figure>
+<h4 id="Plasma-installation"><a href="#Plasma-installation" class="headerlink" title="Plasma installation"></a>Plasma installation</h4><p>To use optimized Plasma cache with OAP, you need following components:  </p>
+<p>   (1) <code>libarrow.so</code>, <code>libplasma.so</code>, <code>libplasma_java.so</code>: dynamic libraries, will be used in Plasma client.<br>   (2) <code>plasma-store-server</code>: executable file, Plasma cache service.<br>   (3) <code>arrow-plasma-0.17.0.jar</code>: will be used when compile oap and spark runtime also need it. </p>
+<ul>
+<li><code>.so</code> file and binary file<br>Clone code from Intel-arrow repo and run following commands, this will install <code>libplasma.so</code>, <code>libarrow.so</code>, <code>libplasma_java.so</code> and <code>plasma-store-server</code> to your system path(<code>/usr/lib64</code> by default). And if you are using Spark in a cluster environment, you can copy these files to all nodes in your cluster if the OS or distribution are same, otherwise, you need compile it on each node.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;tmp</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;Intel-bigdata&#x2F;arrow.git</span><br><span class="line">cd arrow &amp;&amp; git checkout branch-0.17.0-oap-1.0</span><br><span class="line">cd cpp</span><br><span class="line">mkdir release</span><br><span class="line">cd release</span><br><span class="line">#build libarrow, libplasma, libplasma_java</span><br><span class="line">cmake -DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F; -DCMAKE_BUILD_TYPE&#x3D;Release -DARROW_BUILD_TESTS&#x3D;on -DARROW_PLASMA_JAVA_CLIENT&#x3D;on -DARROW_PLASMA&#x3D;on -DARROW_DEPENDENCY_SOURCE&#x3D;BUNDLED  ..</span><br><span class="line">make -j$(nproc)</span><br><span class="line">sudo make install -j$(nproc)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>arrow-plasma-0.17.0.jar<br> <code>arrow-plasma-0.17.0.jar</code> is provided in Maven central repo, you can download <a target="_blank" rel="noopener" href="https://repo1.maven.org/maven2/com/intel/arrow/arrow-plasma/0.17.0/arrow-plasma-0.17.0.jar">it</a> and copy to <code>$SPARK_HOME/jars</code> dir.</p>
+<p> Or you can manually install it, run following command, this will install arrow jars to your local maven repo. Besides, you need copy arrow-plasma-0.17.0.jar to <code>$SPARK_HOME/jars/</code> dir, cause this jar is needed when using external cache.</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;tmp&#x2F;arrow&#x2F;java</span><br><span class="line">mvn clean -q -pl plasma -DskipTests install</span><br></pre></td></tr></table></figure>
+
+<h4 id="Building-the-package"><a href="#Building-the-package" class="headerlink" title="Building the package"></a>Building the package</h4><p>You need to add <code>-Ppersistent-memory</code> to build with PMem support. For <code>noevict</code> cache strategy, you also need to build with <code>-Ppersistent-memory</code> parameter.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean -q -pl com.intel.oap:oap-cache -am  -Ppersistent-memory -DskipTests package</span><br></pre></td></tr></table></figure>
+<p>For vmemcache cache strategy, please build with command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean -q -pl com.intel.oap:oap-cache -am -Pvmemcache -DskipTests package</span><br></pre></td></tr></table></figure>
+<p>Build with this command to use all of them:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean -q -pl com.intel.oap:oap-cache -am  -Ppersistent-memory -Pvmemcache -DskipTests package</span><br></pre></td></tr></table></figure>
+<h2 id="Enabling-NUMA-binding-for-PMem-in-Spark"><a href="#Enabling-NUMA-binding-for-PMem-in-Spark" class="headerlink" title="Enabling NUMA binding for PMem in Spark"></a>Enabling NUMA binding for PMem in Spark</h2><h3 id="Rebuilding-Spark-packages-with-NUMA-binding-patch"><a href="#Rebuilding-Spark-packages-with-NUMA-binding-patch" class="headerlink" title="Rebuilding Spark packages with NUMA binding patch"></a>Rebuilding Spark packages with NUMA binding patch</h3><p>When using PMem as a cache medium apply the <a target="_blank" rel="noopener" href="https://www.kernel.org/doc/html/v4.18/vm/numa.html">NUMA</a> binding patch <a href="./numa-binding-spark-3.0.0.patch">numa-binding-spark-3.0.0.patch</a> to Spark source code for best performance.</p>
+<ol>
+<li><p>Download src for <a target="_blank" rel="noopener" href="https://archive.apache.org/dist/spark/spark-3.0.0/spark-3.0.0.tgz">Spark-3.0.0</a> and clone the src from github.</p>
+</li>
+<li><p>Apply this patch and <a target="_blank" rel="noopener" href="https://spark.apache.org/docs/latest/building-spark.html">rebuild</a> the Spark package.</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git apply  numa-binding-spark-3.0.0.patch</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>Add these configuration items to the Spark configuration file $SPARK_HOME/conf/spark-defaults.conf to enable NUMA binding.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spark.yarn.numa.enabled true </span><br></pre></td></tr></table></figure>
+<p><strong>NOTE</strong>: If you are using a customized Spark, you will need to manually resolve the conflicts.</p>
+<h6 id="Other-names-and-brands-may-be-claimed-as-the-property-of-others"><a href="#Other-names-and-brands-may-be-claimed-as-the-property-of-others" class="headerlink" title="*Other names and brands may be claimed as the property of others."></a>*Other names and brands may be claimed as the property of others.</h6>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hongw2019.github.io/OAP-1.0.0/2020/12/28/Developer-Guide/" data-id="ckj8paogh0001orpv2zk93gns" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/OAP-1.0.0/2020/12/28/index/" class="article-date">
+  <time class="dt-published" datetime="2020-12-28T15:12:21.441Z" itemprop="datePublished">2020-12-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="SQL-Index-and-Data-Source-Cache"><a href="#SQL-Index-and-Data-Source-Cache" class="headerlink" title="SQL Index and Data Source Cache"></a>SQL Index and Data Source Cache</h1><p>SQL Index and Data Source Cache is an optimized plug-in package designed to accelerate Spark SQL* performance by using index and cache technology at the Spark* SQL data source layer. Indexing can improve Spark interactive query performance by as much as an order of magnitude, and caching delivers additional Spark* SQL query performance benefits. We support both DRAM and Intel® Optane™ Persistent Memory as cache media.</p>
+<p>Please refer to these documents for more information:</p>
+<ul>
+<li><a href="./Architect-Overview.md">Architecture Overview</a></li>
+<li><a href="./User-Guide.md">User Guide</a></li>
+<li><a href="./Developer-Guide.md">Developer Guide</a></li>
+</ul>
+<h6 id="Other-names-and-brands-may-be-claimed-as-the-property-of-others"><a href="#Other-names-and-brands-may-be-claimed-as-the-property-of-others" class="headerlink" title="*Other names and brands may be claimed as the property of others."></a>*Other names and brands may be claimed as the property of others.</h6>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hongw2019.github.io/OAP-1.0.0/2020/12/28/index/" data-id="ckj8paogj0003orpv8noigmxi" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Architect-Overview" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/OAP-1.0.0/2020/12/28/Architect-Overview/" class="article-date">
+  <time class="dt-published" datetime="2020-12-28T15:12:21.440Z" itemprop="datePublished">2020-12-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Architecture-Overview"><a href="#Architecture-Overview" class="headerlink" title="Architecture Overview"></a>Architecture Overview</h1><ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#usage-scenarios">Usage Scenarios</a></li>
+<li><a href="#architecture">Architecture</a></li>
+<li><a href="#features">Features</a></li>
+</ul>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Apache Spark* is a unified analytics engine for large-scale data processing, and Spark SQL* is a Spark module widely used to process structured data in data center. However, Spark SQL still faces the challenge of stability and performance in a highly dynamic environment with ultra-large-scale data.</p>
+<p>SQL Index and Data Source Cache are designed to leverage users’ defined indices and smart fine-grained in-memory data caching to boost Spark SQL performance, and can address the performance issues of some use cases.</p>
+<p><img src="./image/OAP-Introduction.PNG" alt="OAP-INTRODUCTION"></p>
+<h2 id="Usage-Scenarios"><a href="#Usage-Scenarios" class="headerlink" title="Usage Scenarios"></a>Usage Scenarios</h2><h3 id="Usage-Scenario-1-–-Interactive-queries"><a href="#Usage-Scenario-1-–-Interactive-queries" class="headerlink" title="Usage Scenario 1 – Interactive queries"></a>Usage Scenario 1 – Interactive queries</h3><p>Most customers adopt Spark SQL as a batch processing engine. Unfortunately, customers would find it hard to separate batch processing and interactive use cases. Interactive queries need to return the data in seconds or even sub-seconds instead of the minutes or hours of batch processing. This is a big challenge for the current Spark SQL implementation.</p>
+<p>For example, the following interactive query attempts to filter out a very small result set from a huge fact table.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select ss_sold_date_sk, ss_sold_time_sk, ss_item_sk, ss_cdemo_sk, ss_store_sk, ss_ticket_number, ss_ext_discount_amt, ss_ext_wholesale_cost, ss_ext_tax</span><br><span class="line">	from fact.ss_sales</span><br><span class="line">	where (date&#x3D;&#39;20200801&#39; and ss_customer&#x3D;&#39;xxx&#39; and ss_item_sk&#x3D;&#39;806486’)</span><br><span class="line">	limit 10</span><br></pre></td></tr></table></figure>
+<p>Interactive queries usually process a large data set but return a small portion of data filtering for a specific condition. By creating and storing a full B+ Tree index for key columns and using a smart fine-grained in-memory data caching strategy, we can boost Spark SQL interactive queries to seconds and even sub-seconds.</p>
+<p>By properly using index and cache, the performance of some interactive queries can possibly be improved by order of magnitude.</p>
+<h3 id="Usage-Scenario-2-–-Batch-processing-jobs"><a href="#Usage-Scenario-2-–-Batch-processing-jobs" class="headerlink" title="Usage Scenario 2 – Batch processing jobs"></a>Usage Scenario 2 – Batch processing jobs</h3><p>Customers usually use Spark SQL for Business Analytics in Data Warehousing. SQL Data Source Cache can speed up batch processing jobs with 2 cache strategies:</p>
+<ol>
+<li>Automatically cache hot data.</li>
+<li>Specifically cache hot tables. </li>
+</ol>
+<p>Users can choose either strategy based on their need.</p>
+<h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h2><p>The following diagram shows the design architecture.</p>
+<p><img src="./image/OAP-Architecture.PNG" alt="ARCHITECTURE"></p>
+<p>SQL Index and Data Source Cache acts as a <code>.jar</code> plug-in for Spark SQL.</p>
+<ul>
+<li><p>We designed the compatible adapter layer for three columnar storage file formats: </p>
+<ol>
+<li><p>Parquet</p>
+</li>
+<li><p>ORC</p>
+</li>
+<li><p>oap(Parquet-like file format defined by OAP).</p>
+<p>SQL Index and Data Source Cache have a <strong><em>Unified Cache Representation</em></strong> for different columnar storage formats and a fine-grained cache unit for one column of a RowGroup.</p>
+</li>
+</ol>
+</li>
+<li><p>2 major optimization functions (indexing and caching) are based on unified representation and the adapter. </p>
+<ul>
+<li>Indices can be created on one or multiple columns of a data file. </li>
+<li>Data Source Cache can cache both decompressed and decoded vectorized data and binary raw data. Generally, the server’s DRAM is used as the cache medium. <a target="_blank" rel="noopener" href="https://www.intel.com/content/www/us/en/architecture-and-technology/optane-dc-persistent-memory.html">PMem</a> can also be used as the cache medium as it will provide a more cost effective solution for the requirements of a high performance environment.</li>
+</ul>
+</li>
+<li><p>Both indexing and caching as <strong><em>Optimizer &amp; Execution</em></strong> are transparent for users. See the <a href="#Features">Features</a> section for details.</p>
+</li>
+<li><p>Spark <strong><em>ThriftServer</em></strong>* is a good use case for OAP, because ThriftServer launches Spark Applications which can cache hot data for a long time in the background, and it also accepts query requests from different clients at the same time. <code>bin/spark-sql</code>, <code>bin/spark-shell</code> or <code>bin/pyspark</code> can certainly be used by SQL Index and Data Source Cache, but usually only for interactive test situations.</p>
+</li>
+</ul>
+<h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><p>Use indexing and caching to improve Spark SQL performance on ad-hoc queries and batch processing jobs.</p>
+<h3 id="Indexing"><a href="#Indexing" class="headerlink" title="Indexing"></a>Indexing</h3><p>Users can use SQL DDL(create/drop/refresh/check/show index) to use indexing. Once users create indices using DDL, index files are generated in a specific directory and mainly composed of index data and statistics. When queries are executed, analyzing index files to boost performance is transparent to users.</p>
+<ul>
+<li><p>BTREE, BITMAP Index is an optimization that is widely used in traditional databases. We also adopt these two index types in the project. BTREE indexing is intended for datasets that have a lot of distinct values, and are distributed randomly, such as telephone numbers or ID numbers. BitMap index is intended for datasets with a limited total amount of distinct values, such as state or age.</p>
+</li>
+<li><p>Statistics are located in the index file after all the index data are written into the index file. Sometimes, reading indices could bring extra cost for some queries. So we also support 4 statistics (MinMax, Bloom Filter, SampleBase and PartByValue) to help filter. With statistics, we can make sure we only use indices if we can possibly improve the execution.</p>
+</li>
+</ul>
+<h3 id="Caching"><a href="#Caching" class="headerlink" title="Caching"></a>Caching</h3><p>Caching is another core feature of OAP. It is also transparent to users. Data Source Cache can automatically load frequently queried (hot) data, and evict data automatically according to the LRU policy when cache is full. Data Source Cache has the following characteristics:</p>
+<ul>
+<li>Off-Heap memory. The Data Source Cache uses off-heap memory and avoids the JVM GC. It can also use <a target="_blank" rel="noopener" href="https://www.intel.com/content/www/us/en/architecture-and-technology/optane-dc-persistent-memory.html">PMem</a> as high-performance, high-capacity, low-cost memory</li>
+<li>Cache-Locality. Data Source Cache can schedule computing tasks to the executor which holds needed data in cache, by implementing a cache aware mechanism based on Spark driver and executors communication.</li>
+<li>Cache granularity. A column in one RowGroup (equivalent to Stripe in ORC) of a column-oriented storage format file is loaded into a basic cache unit which is called a “Fiber” in OAP.</li>
+<li>Cache Eviction. Data Source Cache cache eviction uses LRU policy, and automatically caches and evicts data transparently to end user.</li>
+<li>Cache configured tables. Data Source Cache also supports caching specific tables by configuring items according to actual situations, these tables are usually hot tables.</li>
+</ul>
+<h6 id="Other-names-and-brands-may-be-claimed-as-the-property-of-others"><a href="#Other-names-and-brands-may-be-claimed-as-the-property-of-others" class="headerlink" title="*Other names and brands may be claimed as the property of others."></a>*Other names and brands may be claimed as the property of others.</h6>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hongw2019.github.io/OAP-1.0.0/2020/12/28/Architect-Overview/" data-id="ckj8paogd0000orpv0b52c45x" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Advanced-Configuration" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/OAP-1.0.0/2020/12/28/Advanced-Configuration/" class="article-date">
+  <time class="dt-published" datetime="2020-12-28T15:12:21.440Z" itemprop="datePublished">2020-12-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Advanced-Configuration"><a href="#Advanced-Configuration" class="headerlink" title="Advanced Configuration"></a>Advanced Configuration</h1><p>In addition to usage information provided in <a href="User-Guide.md">User Guide</a>, we provide more strategies for SQL Index and Data Source Cache in this section.</p>
+<p>Their needed dependencies like <strong><em>Memkind</em></strong> ,<strong><em>Vmemcache</em></strong> and <strong><em>Plasma</em></strong> can be automatically installed when following <a href="../../../docs/OAP-Installation-Guide.md">OAP Installation Guide</a>, corresponding feature jars can be found under <code>$HOME/miniconda2/envs/oapenv/oap_jars</code>.</p>
+<ul>
+<li><a href="#ddditional-cache-strategies">Additional Cache Strategies</a>  In addition to <strong>external</strong> cache strategy, SQL Data Source Cache also supports 3 other cache strategies: <strong>guava</strong>, <strong>noevict</strong>  and <strong>vmemcache</strong>.</li>
+<li><a href="#index-and-data-cache-separation">Index and Data Cache Separation</a>  To optimize the cache media utilization, SQL Data Source Cache supports cache separation of data and index, by using same or different cache media with DRAM and PMem.</li>
+<li><a href="#cache-hot-tables">Cache Hot Tables</a>  Data Source Cache also supports caching specific tables according to actual situations, these tables are usually hot tables.</li>
+<li><a href="#column-vector-cache">Column Vector Cache</a>  This document above uses <strong>binary</strong> cache as example for Parquet file format, if your cluster memory resources is abundant enough, you can choose ColumnVector data cache instead of binary cache for Parquet to spare computation time.</li>
+<li><a href="#large-scale-and-heterogeneous-cluster-support">Large Scale and Heterogeneous Cluster Support</a> Introduce an external database to store cache locality info to support large-scale and heterogeneous clusters.</li>
+</ul>
+<h2 id="Additional-Cache-Strategies"><a href="#Additional-Cache-Strategies" class="headerlink" title="Additional Cache Strategies"></a>Additional Cache Strategies</h2><p>Following table shows features of 4 cache strategies on PMem.</p>
+<table>
+<thead>
+<tr>
+<th align="left">guava</th>
+<th align="left">noevict</th>
+<th align="left">vmemcache</th>
+<th align="left">external cache</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Use memkind lib to operate on PMem and guava cache strategy when data eviction happens.</td>
+<td align="left">Use memkind lib to operate on PMem and doesn’t allow data eviction.</td>
+<td align="left">Use vmemcache lib to operate on PMem and LRU cache strategy when data eviction happens.</td>
+<td align="left">Use Plasma/dlmalloc to operate on PMem and LRU cache strategy when data eviction happens.</td>
+</tr>
+<tr>
+<td align="left">Need numa patch in Spark for better performance.</td>
+<td align="left">Need numa patch in Spark for better performance.</td>
+<td align="left">Need numa patch in Spark for better performance.</td>
+<td align="left">Doesn’t need numa patch.</td>
+</tr>
+<tr>
+<td align="left">Suggest using 2 executors one node to keep aligned with PMem paths and numa nodes number.</td>
+<td align="left">Suggest using 2 executors one node to keep aligned with PMem paths and numa nodes number.</td>
+<td align="left">Suggest using 2 executors one node to keep aligned with PMem paths and numa nodes number.</td>
+<td align="left">Node-level cache so there are no limitation for executor number.</td>
+</tr>
+<tr>
+<td align="left">Cache data cleaned once executors exited.</td>
+<td align="left">Cache data cleaned once executors exited.</td>
+<td align="left">Cache data cleaned once executors exited.</td>
+<td align="left">No data loss when executors exit thus is friendly to dynamic allocation. But currently it has performance overhead than other cache solutions.</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>For cache solution <code>guava/noevict</code>, make sure <a target="_blank" rel="noopener" href="https://github.com/memkind/memkind/tree/v1.10.1-rc2">Memkind</a> library installed on every cluster worker node. If you have finished <a href="../../../docs/OAP-Installation-Guide.md">OAP Installation Guide</a>, libmemkind will be installed. Or manually build and install it following <a href="./Developer-Guide.md#memkind-installation">memkind-installation</a>, then place <code>libmemkind.so.0</code> under <code>/lib64/</code> on each worker node.</p>
+</li>
+<li><p>For cache solution <code>vmemcahe/external</code> cache, make sure <a target="_blank" rel="noopener" href="https://github.com/pmem/vmemcache">Vmemcache</a> library has been installed on every cluster worker node. If you have finished <a href="../../../docs/OAP-Installation-Guide.md">OAP Installation Guide</a>, libvmemcache will be installed. Or you can follow the <a href="./Developer-Guide.md#vmemcache-installation">vmemcache-installation</a> steps and make sure <code>libvmemcache.so.0</code> exist under <code>/lib64/</code> directory on each worker node.</p>
+</li>
+</ul>
+<p>If you have followed <a href="../../../docs/OAP-Installation-Guide.md">OAP Installation Guide</a>, <strong><em>Memkind</em></strong> ,<strong><em>Vmemcache</em></strong> and <strong><em>Plasma</em></strong> will be automatically installed.<br>Or you can refer to <a href="../../../docs/Developer-Guide.md">Developer-Guide</a>, there is a shell script to help you install these dependencies automatically.</p>
+<h3 id="Use-PMem-Cache"><a href="#Use-PMem-Cache" class="headerlink" title="Use PMem Cache"></a>Use PMem Cache</h3><h4 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h4><p>The following are required to configure OAP to use PMem cache.</p>
+<ul>
+<li><p>PMem hardware is successfully deployed on each node in cluster.</p>
+</li>
+<li><p>Directories exposing PMem hardware on each socket. For example, on a two socket system the mounted PMem directories should appear as <code>/mnt/pmem0</code> and <code>/mnt/pmem1</code>. Correctly installed PMem must be formatted and mounted on every cluster worker node. You can follow these commands to destroy interleaved PMem device which you set in <a href="./User-Guide.md#prerequisites-1">User-Guide</a>:</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># destroy interleaved PMem device which you set when using external cache strategy</span><br><span class="line">umount &#x2F;mnt&#x2F;pmem</span><br><span class="line">dmsetup remove striped-pmem</span><br><span class="line">echo y | mkfs.ext4 &#x2F;dev&#x2F;pmem0</span><br><span class="line">echo y | mkfs.ext4 &#x2F;dev&#x2F;pmem1</span><br><span class="line">mkdir -p &#x2F;mnt&#x2F;pmem0</span><br><span class="line">mkdir -p &#x2F;mnt&#x2F;pmem1</span><br><span class="line">mount -o dax &#x2F;dev&#x2F;pmem0 &#x2F;mnt&#x2F;pmem0</span><br><span class="line">mount -o dax &#x2F;dev&#x2F;pmem1 &#x2F;mnt&#x2F;pmem1</span><br></pre></td></tr></table></figure>
+<p>   In this case file systems are generated for 2 NUMA nodes, which can be checked by “numactl –hardware”. For a different number of NUMA nodes, a corresponding number of namespaces should be created to assure correct file system paths mapping to NUMA nodes.</p>
+<p>   For more information you can refer to <a target="_blank" rel="noopener" href="https://software.intel.com/content/www/us/en/develop/articles/quick-start-guide-configure-intel-optane-dc-persistent-memory-on-linux.html">Quick Start Guide: Provision Intel® Optane™ DC Persistent Memory</a></p>
+<h4 id="Configuration-for-NUMA"><a href="#Configuration-for-NUMA" class="headerlink" title="Configuration for NUMA"></a>Configuration for NUMA</h4><ol>
+<li><p>Install <code>numactl</code> to bind the executor to the PMem device on the same NUMA node. </p>
+<p><code>yum install numactl -y </code></p>
+</li>
+<li><p>We strongly recommend you use NUMA-patched Spark to achieve better performance gain for the following 3 cache strategies. Besides, currently using Community Spark occasionally has the problem of two executors being bound to the same PMem path. </p>
+<p>Build Spark from source to enable NUMA-binding support, refer to <a href="./Developer-Guide.md#Enabling-NUMA-binding-for-PMem-in-Spark">Enabling-NUMA-binding-for-PMem-in-Spark</a>. </p>
+</li>
+</ol>
+<h4 id="Configuration-for-PMem"><a href="#Configuration-for-PMem" class="headerlink" title="Configuration for PMem"></a>Configuration for PMem</h4><p>Create <code>persistent-memory.xml</code> under <code>$SPARK_HOME/conf</code> if it doesn’t exist. Use the following template and change the <code>initialPath</code> to your mounted paths for PMem devices. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;persistentMemoryPool&gt;</span><br><span class="line">  &lt;!--The numa id--&gt;</span><br><span class="line">  &lt;numanode id&#x3D;&quot;0&quot;&gt;</span><br><span class="line">    &lt;!--The initial path for Intel Optane DC persistent memory--&gt;</span><br><span class="line">    &lt;initialPath&gt;&#x2F;mnt&#x2F;pmem0&lt;&#x2F;initialPath&gt;</span><br><span class="line">  &lt;&#x2F;numanode&gt;</span><br><span class="line">  &lt;numanode id&#x3D;&quot;1&quot;&gt;</span><br><span class="line">    &lt;initialPath&gt;&#x2F;mnt&#x2F;pmem1&lt;&#x2F;initialPath&gt;</span><br><span class="line">  &lt;&#x2F;numanode&gt;</span><br><span class="line">&lt;&#x2F;persistentMemoryPool&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="Guava-cache"><a href="#Guava-cache" class="headerlink" title="Guava cache"></a>Guava cache</h3><p>Guava cache is based on memkind library, built on top of jemalloc and provides memory characteristics. To use it in your workload, follow <a href="#prerequisites">prerequisites</a> to set up PMem hardware correctly, also make sure memkind library installed. Then follow configurations below.</p>
+<p><strong>NOTE</strong>: <code>spark.executor.sql.oap.cache.persistent.memory.reserved.size</code>: When we use PMem as memory through memkind library, some portion of the space needs to be reserved for memory management overhead, such as memory segmentation. We suggest reserving 20% - 25% of the available PMem capacity to avoid memory allocation failure. But even with an allocation failure, OAP will continue the operation to read data from original input data and will not cache the data block.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># enable numa</span><br><span class="line">spark.yarn.numa.enabled                                        true</span><br><span class="line">spark.executorEnv.MEMKIND_ARENA_NUM_PER_KIND                   1</span><br><span class="line"># for Parquet file format, enable binary cache</span><br><span class="line">spark.sql.oap.parquet.binary.cache.enabled                     true</span><br><span class="line"># for ORC file format, enable binary cache</span><br><span class="line">spark.sql.oap.orc.binary.cache.enabled                         true</span><br><span class="line"></span><br><span class="line">spark.sql.oap.cache.memory.manager                             pm </span><br><span class="line">spark.oap.cache.strategy                                       guava</span><br><span class="line"># PMem capacity per executor, according to your cluster</span><br><span class="line">spark.executor.sql.oap.cache.persistent.memory.initial.size    256g</span><br><span class="line"># Reserved space per executor, according to your cluster</span><br><span class="line">spark.executor.sql.oap.cache.persistent.memory.reserved.size   50g</span><br><span class="line"># enable SQL Index and Data Source Cache jar in Spark</span><br><span class="line">spark.sql.extensions                                           org.apache.spark.sql.OapExtensions</span><br><span class="line"># absolute path of the jar on your working node, when in Yarn client mode</span><br><span class="line">spark.files                       $HOME&#x2F;miniconda2&#x2F;envs&#x2F;oapenv&#x2F;oap_jars&#x2F;oap-cache-&lt;version&gt;-with-spark-&lt;version&gt;.jar,$HOME&#x2F;miniconda2&#x2F;envs&#x2F;oapenv&#x2F;oap_jars&#x2F;oap-common-&lt;version&gt;-with-spark-&lt;version&gt;.jar</span><br><span class="line"># relative path to spark.files, just specify jar name in current dir, when in Yarn client mode</span><br><span class="line">spark.executor.extraClassPath     .&#x2F;oap-cache-&lt;version&gt;-with-spark-&lt;version&gt;.jar:.&#x2F;oap-common-&lt;version&gt;-with-spark-&lt;version&gt;.jar</span><br><span class="line"># absolute path of the jar on your working node,when in Yarn client mode</span><br><span class="line">spark.driver.extraClassPath       $HOME&#x2F;miniconda2&#x2F;envs&#x2F;oapenv&#x2F;oap_jars&#x2F;oap-cache-&lt;version&gt;-with-spark-&lt;version&gt;.jar:$HOME&#x2F;miniconda2&#x2F;envs&#x2F;oapenv&#x2F;oap_jars&#x2F;oap-common-&lt;version&gt;-with-spark-&lt;version&gt;.jar</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>Memkind library also support DAX KMEM mode. Refer to <a target="_blank" rel="noopener" href="https://github.com/memkind/memkind#kernel">Kernel</a>, this chapter will guide how to configure PMem as system RAM. Or <a target="_blank" rel="noopener" href="https://pmem.io/2020/01/20/memkind-dax-kmem.html">Memkind support for KMEM DAX option</a> for more details.</p>
+<p>Please note that DAX KMEM mode need kernel version 5.x and memkind version 1.10 or above. If you choose KMEM mode, change memory manager from <code>pm</code> to <code>kmem</code> as below.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spark.sql.oap.cache.memory.manager           kmem</span><br></pre></td></tr></table></figure>
+<h3 id="Noevict-cache"><a href="#Noevict-cache" class="headerlink" title="Noevict cache"></a>Noevict cache</h3><p>The noevict cache strategy is also supported in OAP based on the memkind library for PMem.</p>
+<p>To use it in your workload, follow <a href="#prerequisites">prerequisites</a> to set up PMem hardware correctly, also make sure memkind library installed. Then follow the configuration below.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># enable numa</span><br><span class="line">spark.yarn.numa.enabled                                      true</span><br><span class="line">spark.executorEnv.MEMKIND_ARENA_NUM_PER_KIND                 1</span><br><span class="line"># for Parquet file format, enable binary cache</span><br><span class="line">spark.sql.oap.parquet.binary.cache.enabled                   true </span><br><span class="line"># for ORC file format, enable binary cache</span><br><span class="line">spark.sql.oap.orc.binary.cache.enabled                       true</span><br><span class="line">spark.oap.cache.strategy                                     noevict </span><br><span class="line">spark.executor.sql.oap.cache.persistent.memory.initial.size  256g </span><br><span class="line"></span><br><span class="line"># Enable OAP extension in Spark</span><br><span class="line">spark.sql.extensions              org.apache.spark.sql.OapExtensions</span><br><span class="line"></span><br><span class="line"># absolute path of the jar on your working node, when in Yarn client mode</span><br><span class="line">spark.files                       $HOME&#x2F;miniconda2&#x2F;envs&#x2F;oapenv&#x2F;oap_jars&#x2F;oap-cache-&lt;version&gt;-with-spark-&lt;version&gt;.jar,$HOME&#x2F;miniconda2&#x2F;envs&#x2F;oapenv&#x2F;oap_jars&#x2F;oap-common-&lt;version&gt;-with-spark-&lt;version&gt;.jar</span><br><span class="line"># relative path to spark.files, just specify jar name in current dir, when in Yarn client mode</span><br><span class="line">spark.executor.extraClassPath     .&#x2F;oap-cache-&lt;version&gt;-with-spark-&lt;version&gt;.jar:.&#x2F;oap-common-&lt;version&gt;-with-spark-&lt;version&gt;.jar</span><br><span class="line"># absolute path of the jar on your working node,when in Yarn client mode</span><br><span class="line">spark.driver.extraClassPath       $HOME&#x2F;miniconda2&#x2F;envs&#x2F;oapenv&#x2F;oap_jars&#x2F;oap-cache-&lt;version&gt;-with-spark-&lt;version&gt;.jar:$HOME&#x2F;miniconda2&#x2F;envs&#x2F;oapenv&#x2F;oap_jars&#x2F;oap-common-&lt;version&gt;-with-spark-&lt;version&gt;.jar</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="Vmemcache"><a href="#Vmemcache" class="headerlink" title="Vmemcache"></a>Vmemcache</h3><ul>
+<li><p>Make sure <a target="_blank" rel="noopener" href="https://github.com/pmem/vmemcache">Vmemcache</a> library has been installed on every cluster worker node if vmemcache strategy is chosen for PMem cache. If you have finished <a href="../../docs/OAP-Installation-Guide.md">OAP-Installation-Guide</a>, vmemcache library will be automatically installed by Conda.</p>
+<p>Or you can follow the <a href="./Developer-Guide.md#build-and-install-vmemcache">build/install</a> steps and make sure <code>libvmemcache.so</code> exist in <code>/lib64</code> directory on each worker node.</p>
+</li>
+<li><p>To use it in your workload, follow <a href="#prerequisites">prerequisites</a> to set up PMem hardware correctly.</p>
+</li>
+</ul>
+<h4 id="Configure-to-enable-PMem-cache"><a href="#Configure-to-enable-PMem-cache" class="headerlink" title="Configure to enable PMem cache"></a>Configure to enable PMem cache</h4><p>Make the following configuration changes in <code>$SPARK_HOME/conf/spark-defaults.conf</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># 2x number of your worker nodes</span><br><span class="line">spark.executor.instances          6</span><br><span class="line"># enable numa</span><br><span class="line">spark.yarn.numa.enabled           true</span><br><span class="line"># Enable OAP extension in Spark</span><br><span class="line">spark.sql.extensions              org.apache.spark.sql.OapExtensions</span><br><span class="line"></span><br><span class="line"># absolute path of the jar on your working node, when in Yarn client mode</span><br><span class="line">spark.files                       $HOME&#x2F;miniconda2&#x2F;envs&#x2F;oapenv&#x2F;oap_jars&#x2F;oap-cache-&lt;version&gt;-with-spark-&lt;version&gt;.jar,$HOME&#x2F;miniconda2&#x2F;envs&#x2F;oapenv&#x2F;oap_jars&#x2F;oap-common-&lt;version&gt;-with-spark-&lt;version&gt;.jar</span><br><span class="line"># relative path to spark.files, just specify jar name in current dir, when in Yarn client mode</span><br><span class="line">spark.executor.extraClassPath     .&#x2F;oap-cache-&lt;version&gt;-with-spark-&lt;version&gt;.jar:.&#x2F;oap-common-&lt;version&gt;-with-spark-&lt;version&gt;.jar</span><br><span class="line"># absolute path of the jar on your working node,when in Yarn client mode</span><br><span class="line">spark.driver.extraClassPath       $HOME&#x2F;miniconda2&#x2F;envs&#x2F;oapenv&#x2F;oap_jars&#x2F;oap-cache-&lt;version&gt;-with-spark-&lt;version&gt;.jar:$HOME&#x2F;miniconda2&#x2F;envs&#x2F;oapenv&#x2F;oap_jars&#x2F;oap-common-&lt;version&gt;-with-spark-&lt;version&gt;.jar</span><br><span class="line"></span><br><span class="line"># for parquet file format, enable binary cache</span><br><span class="line">spark.sql.oap.parquet.binary.cache.enabled                   true</span><br><span class="line"># for ORC file format, enable binary cache</span><br><span class="line">spark.sql.oap.orc.binary.cache.enabled                       true</span><br><span class="line"># enable vmemcache strategy </span><br><span class="line">spark.oap.cache.strategy                                     vmem </span><br><span class="line">spark.executor.sql.oap.cache.persistent.memory.initial.size  256g </span><br><span class="line"># according to your cluster</span><br><span class="line">spark.executor.sql.oap.cache.guardian.memory.size            10g</span><br></pre></td></tr></table></figure>
+<p>The <code>vmem</code> cache strategy is based on libvmemcache (buffer based LRU cache), which provides a key-value store API. Follow these steps to enable vmemcache support in Data Source Cache.</p>
+<ul>
+<li><code>spark.executor.instances</code>: We suggest setting the value to 2X the number of worker nodes when NUMA binding is enabled. Each worker node runs two executors, each executor is bound to one of the two sockets, and accesses the corresponding PMem device on that socket.</li>
+<li><code>spark.executor.sql.oap.cache.persistent.memory.initial.size</code>: It is configured to the available PMem capacity to be used as data cache per exectutor.</li>
+</ul>
+<p><strong>NOTE</strong>: If “PendingFiber Size” (on spark web-UI OAP page) is large, or some tasks fail with “cache guardian use too much memory” error, set <code>spark.executor.sql.oap.cache.guardian.memory.size </code> to a larger number as the default size is 10GB. The user could also increase <code>spark.sql.oap.cache.guardian.free.thread.nums</code> or decrease <code>spark.sql.oap.cache.dispose.timeout.ms</code> to free memory more quickly.</p>
+<h4 id="Verify-PMem-cache-functionality"><a href="#Verify-PMem-cache-functionality" class="headerlink" title="Verify PMem cache functionality"></a>Verify PMem cache functionality</h4><ul>
+<li><p>After finishing configuration, restart Spark Thrift Server for the configuration changes to take effect. Start at step 2 of the <a href="./User-Guide.md#use-dram-cache">Use DRAM Cache</a> guide to verify that cache is working correctly.</p>
+</li>
+<li><p>Verify NUMA binding status by confirming keywords like <code>numactl --cpubind=1 --membind=1</code> contained in executor launch command.</p>
+</li>
+<li><p>Check PMem cache size by checking disk space with <code>df -h</code>.For <code>vmemcache</code> strategy, disk usage will reach the initial cache size once the PMem cache is initialized and will not change during workload execution. For <code>Guava/Noevict</code> strategies, the command will show disk space usage increases along with workload execution. </p>
+</li>
+</ul>
+<h2 id="Index-and-Data-Cache-Separation"><a href="#Index-and-Data-Cache-Separation" class="headerlink" title="Index and Data Cache Separation"></a>Index and Data Cache Separation</h2><p>SQL Index and Data Source Cache now supports different cache strategies for DRAM and PMem. To optimize the cache media utilization, you can enable cache separation of data and index with same or different cache media. When Sharing same media, data cache and index cache will use different fiber cache ratio.</p>
+<p>Here we list 4 different kinds of configuration for index/cache separation, if you choose one of them, please add corresponding configuration to <code>spark-defaults.conf</code>.</p>
+<ol>
+<li>DRAM as cache media, <code>guava</code> strategy as index &amp; data cache backend. </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spark.sql.oap.index.data.cache.separation.enabled       true</span><br><span class="line">spark.oap.cache.strategy                                mix</span><br><span class="line">spark.sql.oap.cache.memory.manager                      offheap</span><br></pre></td></tr></table></figure>
+<p>The rest configuration you can refer to  <a href="./User-Guide.md#use-dram-cache">Use DRAM Cache</a> </p>
+<ol start="2">
+<li>PMem as cache media, <code>external</code> strategy as index &amp; data cache backend. </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">spark.sql.oap.index.data.cache.separation.enabled       true</span><br><span class="line">spark.oap.cache.strategy                                mix</span><br><span class="line">spark.sql.oap.cache.memory.manager                      tmp</span><br><span class="line">spark.sql.oap.mix.data.cache.backend                    external</span><br><span class="line">spark.sql.oap.mix.index.cache.backend                   external</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>The rest configurations can refer to the configurations of <a href="./User-Guide.md#use-pmem-cache">PMem Cache</a> and  <a href="./User-Guide.md#configuration-for-enabling-pmem-cache">External cache</a></p>
+<ol start="3">
+<li>DRAM(<code>offheap</code>)/<code>guava</code> as <code>index</code> cache media and backend, PMem(<code>tmp</code>)/<code>external</code> as <code>data</code> cache media and backend. </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">spark.sql.oap.index.data.cache.separation.enabled            true</span><br><span class="line">spark.oap.cache.strategy                                     mix</span><br><span class="line">spark.sql.oap.cache.memory.manager                           mix </span><br><span class="line">spark.sql.oap.mix.data.cache.backend                         external</span><br><span class="line"></span><br><span class="line"># 2x number of your worker nodes</span><br><span class="line">spark.executor.instances                                     6</span><br><span class="line"># enable numa</span><br><span class="line">spark.yarn.numa.enabled                                      true</span><br><span class="line">spark.memory.offHeap.enabled                                 false</span><br><span class="line"></span><br><span class="line">spark.sql.oap.dcpmm.free.wait.threshold                      50000000000</span><br><span class="line"># according to your executor core number</span><br><span class="line">spark.executor.sql.oap.cache.external.client.pool.size       10</span><br><span class="line"></span><br><span class="line"># equal to the size of executor.memoryOverhead</span><br><span class="line">spark.executor.sql.oap.cache.offheap.memory.size             50g</span><br><span class="line"># according to the resource of cluster</span><br><span class="line">spark.executor.memoryOverhead                                50g</span><br><span class="line"></span><br><span class="line"># for ORC file format</span><br><span class="line">spark.sql.oap.orc.binary.cache.enabled                       true</span><br><span class="line"># for Parquet file format</span><br><span class="line">spark.sql.oap.parquet.binary.cache.enabled                   true</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>DRAM(<code>offheap</code>)/<code>guava</code> as <code>index</code> cache media and backend, PMem(<code>pm</code>)/<code>guava</code> as <code>data</code> cache media and backend. </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">spark.sql.oap.index.data.cache.separation.enabled            true</span><br><span class="line">spark.oap.cache.strategy                                     mix</span><br><span class="line">spark.sql.oap.cache.memory.manager                           mix </span><br><span class="line"></span><br><span class="line"># 2x number of your worker nodes</span><br><span class="line">spark.executor.instances                                     6</span><br><span class="line"># enable numa</span><br><span class="line">spark.yarn.numa.enabled                                      true</span><br><span class="line">spark.executorEnv.MEMKIND_ARENA_NUM_PER_KIND                 1</span><br><span class="line">spark.memory.offHeap.enabled                                 false</span><br><span class="line"># PMem capacity per executor</span><br><span class="line">spark.executor.sql.oap.cache.persistent.memory.initial.size  256g</span><br><span class="line"># Reserved space per executor</span><br><span class="line">spark.executor.sql.oap.cache.persistent.memory.reserved.size 50g</span><br><span class="line"></span><br><span class="line"># equal to the size of executor.memoryOverhead</span><br><span class="line">spark.executor.sql.oap.cache.offheap.memory.size             50g</span><br><span class="line"># according to the resource of cluster</span><br><span class="line">spark.executor.memoryOverhead                                50g</span><br><span class="line"># for ORC file format</span><br><span class="line">spark.sql.oap.orc.binary.cache.enabled                       true</span><br><span class="line"># for Parquet file format</span><br><span class="line">spark.sql.oap.parquet.binary.cache.enabled                   true</span><br></pre></td></tr></table></figure>
+<h2 id="Cache-Hot-Tables"><a href="#Cache-Hot-Tables" class="headerlink" title="Cache Hot Tables"></a>Cache Hot Tables</h2><p>Data Source Cache also supports caching specific tables by configuring items according to actual situations, these tables are usually hot tables.</p>
+<p>To enable caching specific hot tables, you can add the configuration below to <code>spark-defaults.conf</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># enable table lists fiberCache</span><br><span class="line">spark.sql.oap.cache.table.list.enabled          true</span><br><span class="line"># Table lists using fiberCache actively</span><br><span class="line">spark.sql.oap.cache.table.list                  &lt;databasename&gt;.&lt;tablename1&gt;;&lt;databasename&gt;.&lt;tablename2&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Column-Vector-Cache"><a href="#Column-Vector-Cache" class="headerlink" title="Column Vector Cache"></a>Column Vector Cache</h2><p>This document above use <strong>binary</strong> cache for Parquet as example, cause binary cache can improve cache space utilization compared to ColumnVector cache. When your cluster memory resources are abundant enough, you can choose ColumnVector cache to spare computation time. </p>
+<p>To enable ColumnVector data cache for Parquet file format, you should add the configuration below to <code>spark-defaults.conf</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># for parquet file format, disable binary cache</span><br><span class="line">spark.sql.oap.parquet.binary.cache.enabled             false</span><br><span class="line"># for parquet file format, enable ColumnVector cache</span><br><span class="line">spark.sql.oap.parquet.data.cache.enabled               true</span><br></pre></td></tr></table></figure>
+<h2 id="Large-Scale-and-Heterogeneous-Cluster-Support"><a href="#Large-Scale-and-Heterogeneous-Cluster-Support" class="headerlink" title="Large Scale and Heterogeneous Cluster Support"></a>Large Scale and Heterogeneous Cluster Support</h2><p><strong><em>NOTE:</em></strong> Only works with <code>external cache</code></p>
+<p>OAP influences Spark to schedule tasks according to cache locality info. This info could be of large amount in a <strong><em>large scale cluster</em></strong>, and how to schedule tasks in a <strong><em>heterogeneous cluster</em></strong> (some nodes with PMem, some without) could also be challenging.</p>
+<p>We introduce an external DB to store cache locality info. If there’s no cache available, Spark will fall back to schedule respecting HDFS locality.<br>Currently we support <a target="_blank" rel="noopener" href="https://redis.io/">Redis</a> as external DB service. Please <a target="_blank" rel="noopener" href="https://redis.io/download">download and launch a redis-server</a> before running Spark with OAP.</p>
+<p>Please add the following configurations to <code>spark-defaults.conf</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spark.sql.oap.external.cache.metaDB.enabled            true</span><br><span class="line"># Redis-server address</span><br><span class="line">spark.sql.oap.external.cache.metaDB.address            10.1.2.12</span><br><span class="line">spark.sql.oap.external.cache.metaDB.impl               org.apache.spark.sql.execution.datasources.RedisClient</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hongw2019.github.io/OAP-1.0.0/2020/12/28/Advanced-Configuration/" data-id="ckj8paogk0004orpv64tx3ina" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -316,6 +723,22 @@ Run command  <code>yarn app -launch plasma-store-service /tmp/plasmaLaunch.json<
             <a href="/OAP-1.0.0/2020/12/28/User-Guide/">(no title)</a>
           </li>
         
+          <li>
+            <a href="/OAP-1.0.0/2020/12/28/README/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/OAP-1.0.0/2020/12/28/Developer-Guide/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/OAP-1.0.0/2020/12/28/index/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/OAP-1.0.0/2020/12/28/Architect-Overview/">(no title)</a>
+          </li>
+        
       </ul>
     </div>
   </div>
@@ -329,7 +752,7 @@ Run command  <code>yarn app -launch plasma-store-service /tmp/plasmaLaunch.json<
   <div class="outer">
     <div id="footer-info" class="inner">
       
-      &copy; 2020 John Doe<br>
+      &copy; 2020 Wh<br>
       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
